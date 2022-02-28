@@ -11,22 +11,12 @@ namespace User_Registration
         static void Main(string[] args)
         {
             Console.WriteLine("==========Welcome To User Registration===========");
-<<<<<<< HEAD
-            Console.WriteLine("Enter the user info :  \n1.FirstName  \n2.LastName");
-            Registration registration = new Registration();
-            int choice =Convert.ToInt32(Console.ReadLine());
-            switch(choice)
-            {
-                case 1:
-                    registration.FirstName();
-                    break;
-=======
             Registration registration = new Registration();
             bool flag = true;
 
             while (flag)
             {
-                Console.WriteLine("\nEnter the user info :  \n1.FirstName  \n2.LastName \n3.Exit");
+                Console.WriteLine("\nEnter the user info :  \n1.FirstName  \n2.LastName  \n3.Email Id  \n4.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -37,6 +27,9 @@ namespace User_Registration
                         registration.LastName();
                         break;
                     case 3:
+                        registration.EmailId();
+                        break;
+                    case 4:
                         Console.WriteLine("Do you want to exit = Y/N");
                         char option = Convert.ToChar(Console.ReadLine());
                         if(option == 'Y')
@@ -52,9 +45,7 @@ namespace User_Registration
                     default:
                         Console.WriteLine("Invalid choice");
                         break;
-
                 }
->>>>>>> UC2-LastName
             }
             Console.ReadKey();
         }

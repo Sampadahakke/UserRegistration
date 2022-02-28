@@ -35,6 +35,19 @@ namespace User_Registration
                 Console.WriteLine("Please enter the valid last name..");
         }
 
+        //Creating method to check validation for email id
+        public void EmailId()
+        {
+            Console.WriteLine("Enter the email id = ");
+            string emailId = Console.ReadLine();
+            string pattern = "^[A-Za-z0-9]{3,}([.][A-Za-z0-9]{3,})?[@][a-zA-Z]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2})?$";
+
+            if (ValidateName(emailId, pattern))
+                Console.WriteLine("The entered email id is valid!!");
+            else
+                Console.WriteLine("Please enter the email id..");
+        }
+
         //Creating method to check validation
         public bool ValidateName(string info, string Pattern)
         {
