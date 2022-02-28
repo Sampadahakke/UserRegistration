@@ -16,7 +16,7 @@ namespace User_Registration
 
             while (flag)
             {
-                Console.WriteLine("\nEnter the user info :  \n1.FirstName  \n2.LastName  \n3.Email Id  \n4.Exit");
+                Console.WriteLine("\nEnter the user info :  \n1.FirstName  \n2.LastName  \n3.Email Id  \n4.MobileNumber \n5.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -30,6 +30,9 @@ namespace User_Registration
                         registration.EmailId();
                         break;
                     case 4:
+                        registration.MobileNumber();
+                        break;
+                    case 5:
                         Console.WriteLine("Do you want to exit = Y/N");
                         char option = Convert.ToChar(Console.ReadLine());
                         if(option == 'Y')
