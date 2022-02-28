@@ -22,6 +22,19 @@ namespace User_Registration
                 Console.WriteLine("Please enter the valid name..");
         }
 
+        //Creating method to check validation for last name
+        public void LastName()
+        {
+            Console.WriteLine("Enter the last name = ");
+            string name = Console.ReadLine();
+            string pattern = "^[A-Z][a-zA-Z]{2,}$";
+
+            if (ValidateName(name, pattern))
+                Console.WriteLine("The entered last name is valid!!");
+            else
+                Console.WriteLine("Please enter the valid last name..");
+        }
+
         //Creating method to check validation
         public bool ValidateName(string info, string Pattern)
         {
