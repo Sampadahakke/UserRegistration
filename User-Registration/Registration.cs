@@ -9,21 +9,23 @@ namespace User_Registration
 {
     internal class Registration
     {
-        //Initializing Variables
-        public static string namePattern = "^[A-Z][a-zA-Z]{2,}$";
-        string Name;  
-        
-        //Creating method to take user info
-        public void UserInfo()
+        //Creating method to check validation for first name
+        public void FirstName()
         {
-            Console.Write("Enter the name = ");
-            this.Name = Console.ReadLine();
+            Console.WriteLine("Enter the name = ");
+            string name = Console.ReadLine();
+            string Pattern = "^[A-Z][a-zA-Z]{2,}$";
+
+            if (ValidateName(name,Pattern))
+                Console.WriteLine("The entered name is valid!!");
+            else
+                Console.WriteLine("Please enter the valid name..");
         }
 
         //Creating method to check validation
-        public bool ValidateName()
+        public bool ValidateName(string info, string Pattern)
         {
-           return Regex.IsMatch(Name, namePattern);
+           return Regex.IsMatch( info, Pattern);
         }
 
     }
