@@ -19,6 +19,9 @@ namespace User_Registration
             registration.MobileNumber();
             registration.Password();
             Console.ReadKey();
+
+           
+            
         }
 
     }
