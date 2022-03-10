@@ -9,16 +9,22 @@ namespace User_Registration
 {
     public class Registration
     {
-        //Creating method to check validation for first name
+        Func<string, string, bool> lambdaValidation = (input, pattern) => { return Regex.IsMatch(input, pattern); };
+        
+
+    //Creating method to check validation for first name
         public void FirstName()
         {
             Console.Write("\n1.Enter the name = ");
-            string name = Console.ReadLine();
+            string firstName = Console.ReadLine();
+          
             string Pattern = "^[A-Z][a-zA-Z]{2,}$";
+
             try
             {
-               if (Validate(name, Pattern))
+               if ( lambdaValidation(firstName,Pattern))
                {
+
                     Console.WriteLine("The entered first name is valid!!");
                }
                else
@@ -42,7 +48,7 @@ namespace User_Registration
             string pattern = "^[A-Z][a-zA-Z]{2,}$";
             try
             {
-                if (Validate(name, pattern))
+                if (lambdaValidation(name, pattern))
                 {
                     Console.WriteLine("The entered last name is valid!!");
                 }
@@ -68,7 +74,7 @@ namespace User_Registration
             string pattern = "^[A-Za-z0-9]{3,}([.][A-Za-z0-9]{3,})?[@][a-zA-Z]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2})?$";
             try
             {
-                if (Validate(emailId, pattern))
+                if (lambdaValidation(emailId, pattern))
                 {
                     Console.WriteLine("The entered email id is valid!!");
                 }
@@ -94,13 +100,13 @@ namespace User_Registration
             string pattern = "^([0-9]{2}[ ]){0,1}[0-9]{10}$";
             try
             {
-                if (Validate(mobileNumber,pattern))
+                if (lambdaValidation(mobileNumber,pattern))
                 {
-                    Console.WriteLine("The entered first name is valid!!");
+                    Console.WriteLine("The entered mobile number is valid!!");
                 }
                 else
                 {
-                    throw new InvalidInputException("The entered first name is invalid..");
+                    throw new InvalidInputException("The entered mobile number is invalid..");
 
                 }
             }
@@ -120,13 +126,13 @@ namespace User_Registration
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])(A-Za-z\d$!$%*?&]{8,}$";
             try
             {
-                if (Validate(password, pattern))
+                if (lambdaValidation(password, pattern))
                 {
-                    Console.WriteLine("The entered first name is valid!!");
+                    Console.WriteLine("The entered password is valid!!");
                 }
                 else
                 {
-                    throw new InvalidInputException("The entered first name is invalid..");
+                    throw new InvalidInputException("The entered password is invalid..");
 
                 }
             }
@@ -137,13 +143,6 @@ namespace User_Registration
             }
 
         }
-
-        //Creating method to check validation
-        public static bool Validate(string info, string Pattern)
-        {
-            return Regex.IsMatch(info, Pattern);
-        }
-
 
     }
 }
