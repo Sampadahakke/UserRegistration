@@ -96,11 +96,11 @@ namespace User_Registration
             {
                 if (Validate(mobileNumber,pattern))
                 {
-                    Console.WriteLine("The entered first name is valid!!");
+                    Console.WriteLine("The entered mobile number is valid!!");
                 }
                 else
                 {
-                    throw new InvalidInputException("The entered first name is invalid..");
+                    throw new InvalidInputException("The entered mobile number is invalid..");
 
                 }
             }
@@ -122,11 +122,11 @@ namespace User_Registration
             {
                 if (Validate(password, pattern))
                 {
-                    Console.WriteLine("The entered first name is valid!!");
+                    Console.WriteLine("The entered password is valid!!");
                 }
                 else
                 {
-                    throw new InvalidInputException("The entered first name is invalid..");
+                    throw new InvalidInputException("The entered password is invalid..");
 
                 }
             }
